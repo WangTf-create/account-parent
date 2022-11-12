@@ -1,0 +1,9 @@
+spring:
+  mail:
+    protocol: smtp
+    host: localhost
+    username: 1512880555@qq.com
+    password: 123456
+    port: 25
+    properties:
+      mail.smtp.auth: true
