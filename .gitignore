@@ -1,3 +1,4 @@
 # Project exclude paths
 /account-email/target/
 /account-persist/target/
+/account-captcha/target/

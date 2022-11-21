@@ -25,6 +25,7 @@
     <modules>
         <module>account-persist</module>
         <module>account-email</module>
+        <module>account-captcha</module>
     </modules>
     <packaging>pom</packaging>
     <name>Account Parent</name>
@@ -43,26 +44,27 @@
         <lombok.version>1.18.24</lombok.version>
         <dom.version>2.1.3</dom.version>
         <common.lang3.version>3.12.0</common.lang3.version>
+        <common.io.version>2.6</common.io.version>
+        <spring.mybatis.version>2.1.1</spring.mybatis.version>
+        <guava.version>31.1-jre</guava.version>
     </properties>
 
 
-    <!--远程仓库的地址-->
-    <repositories>
+    <!--使用Maven将部署构件至私服-->
+    <distributionManagement>
         <repository>
-            <id>jboss</id>
-            <name>JBoss Repository</name>
-            <url>https://repository.jboss.com/maven2</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-                <updatePolicy>daily</updatePolicy>
-                <checksumPolicy>ignore</checksumPolicy>
-            </snapshots>
+            <id>nexus-releases</id>
+            <name>Nexus Releases Repository</name>
+            <url>http://localhost:8081/repository/maven-releases/</url>
         </repository>
-    </repositories>
 
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>Nexus Snapshots Repository</name>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+
+    </distributionManagement>
 
     <dependencyManagement>
         <dependencies>
@@ -99,6 +101,7 @@
                 <version>${springframework.version}</version>
             </dependency>
 
+            <!--这个依赖中只有junit5的引擎-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
@@ -118,6 +121,30 @@
                 <version>${common.lang3.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${spring.mybatis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${common.io.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.junit.vintage</groupId>
+                <artifactId>junit-vintage-engine</artifactId>
+                <version>5.9.0</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -161,7 +188,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.22.2</version>
                     <configuration>
-                        <skipTests>true</skipTests>
+                        <skipTests>false</skipTests>
                     </configuration>
                 </plugin>
 
