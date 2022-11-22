@@ -2,11 +2,10 @@ package com.citi.mvnbook.account.captcha.service.impl;
 
 import com.google.common.collect.Lists;
 import org.apache.commons.io.FileUtils;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import javax.annotation.Resource;
 import java.io.File;
@@ -18,11 +17,11 @@ import java.util.List;
  * @author wangtongfa
  * @date 2022/11/20 21:53
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = {
         AccountCaptchaServiceImpl.class
 })
-public class AccountCaptchaServiceImplTest {
+
+public class AccountCaptchaServiceImplTest  extends AbstractTestNGSpringContextTests {
 
     @Resource
     private AccountCaptchaServiceImpl accountCaptchaService;

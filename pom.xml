@@ -47,6 +47,7 @@
         <common.io.version>2.6</common.io.version>
         <spring.mybatis.version>2.1.1</spring.mybatis.version>
         <guava.version>31.1-jre</guava.version>
+        <testng.version>6.11</testng.version>
     </properties>
 
 
@@ -63,7 +64,6 @@
             <name>Nexus Snapshots Repository</name>
             <url>http://localhost:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
-
     </distributionManagement>
 
     <dependencyManagement>
@@ -145,6 +145,19 @@
                 <version>5.9.0</version>
                 <scope>test</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>junit</groupId>
+                        <artifactId>junit</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -199,6 +212,7 @@
                     </configuration>
                 </plugin>
 
+                <!--代码覆盖率插件-->
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>

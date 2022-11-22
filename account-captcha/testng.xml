@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/Users/wangtongfa/IdeaProjects/account-parent/account-captcha">
+        <classes>
+            <class name="com.citi.mvnbook.account.captcha.service.impl.AccountCaptchaServiceImplTest">
+                <methods>
+                    <include name="testGenerateCaptcha"/>
+                    <include name="testValidateCaptchaCorrect"/>
+                    <include name="testValidateCaptchaIncorrect"/>
+                </methods>
+            </class>
+            <class name="com.citi.mvnbook.account.captcha.util.RandomGeneratorTest">
+                <methods>
+                    <include name="testGetRandom"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+
