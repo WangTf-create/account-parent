@@ -46,6 +46,6 @@ public class AccountPersistServiceTest {
     @Test
     public void readAccount() {
         Account account = accountPersistService.readAccount("citi_wtf");
-        Assert.assertEquals(account.getEmail(), "wtf@citi.com");
+        Assert.assertEquals("wtf@citi.com", account.getEmail());
     }
 }
