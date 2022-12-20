@@ -26,6 +26,8 @@
         <module>account-persist</module>
         <module>account-email</module>
         <module>account-captcha</module>
+        <module>account-service</module>
+        <module>account-web</module>
     </modules>
     <packaging>pom</packaging>
     <name>Account Parent</name>
@@ -48,6 +50,7 @@
         <spring.mybatis.version>2.1.1</spring.mybatis.version>
         <guava.version>31.1-jre</guava.version>
         <testng.version>6.11</testng.version>
+        <greenmail.version>2.0.0-alpha-2</greenmail.version>
     </properties>
 
 
@@ -158,6 +161,12 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+
+            <dependency>
+                <groupId>com.icegreen</groupId>
+                <artifactId>greenmail</artifactId>
+                <version>${greenmail.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -237,6 +246,7 @@
                     </executions>
                 </plugin>
 
+                <!--将src/main/test打进发布的包中-->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>

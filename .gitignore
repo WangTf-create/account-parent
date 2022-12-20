@@ -2,3 +2,5 @@
 /account-email/target/
 /account-persist/target/
 /account-captcha/target/
+/account-web/target/
+/account-service/target/

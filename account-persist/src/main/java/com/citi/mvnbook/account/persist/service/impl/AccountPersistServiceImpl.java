@@ -20,7 +20,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
-import java.util.List;
 
 import static com.citi.mvnbook.account.persist.constant.PersistConstants.*;
 
@@ -34,6 +33,10 @@ public class AccountPersistServiceImpl implements AccountPersistService {
 
     @Value("${persist.file}")
     private String path;
+
+    public void setPath(String path) {
+        this.path = path;
+    }
 
     private final SAXReader reader = new SAXReader();
 
@@ -106,7 +109,7 @@ public class AccountPersistServiceImpl implements AccountPersistService {
     public Account readAccount(String id) throws AccountPersistException {
         Document document = readDocument();
         Element accountsEle = document.getRootElement().element(ACCOUNTS_ELEMENT);
-        for (Element accountEle : (List<Element>)accountsEle.elements()) {
+        for (Element accountEle : accountsEle.elements()) {
             if (StringUtils.equals(accountEle.elementText(ACCOUNT_ELEMENT_ID),id)){
                 return buildAccount(accountEle);
             }

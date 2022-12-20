@@ -74,6 +74,7 @@
     </dependencies>
 
     <build>
+        <!--令filtering为true.然后maven的占位符解析表达式就可以用于它里面的表达式解析了.-->
         <testResources>
             <testResource>
                 <directory>src/main/resources</directory>
