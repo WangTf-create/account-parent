@@ -36,8 +36,8 @@
 
     <!--software configuration management-->
     <scm>
-        <connection>scm:git:https://804e4470-c015-4d23-87fb-6bbc93903c20@github.com/WangTf-create/account-parent.git</connection>
-        <developerConnection>scm:git:https://804e4470-c015-4d23-87fb-6bbc93903c20@github.com/WangTf-create/account-parent.git</developerConnection>
+        <connection>scm:git:https://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@github.com/WangTf-create/account-parent.git</connection>
+        <developerConnection>scm:git:https://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@github.com/WangTf-create/account-parent.git</developerConnection>
         <url>https://github.com/WangTf-create/account-parent.git</url>
     </scm>
     <properties>
@@ -45,6 +45,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.release>${java.version}</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--归类依赖-->
         <springframework.version>2.7.4</springframework.version>
