@@ -34,6 +34,12 @@
     <description>Account relative modules</description>
     <inceptionYear>2022/11/7</inceptionYear>
 
+    <!--software configuration management-->
+    <scm>
+        <connection>scm:git:https://github.com/WangTf-create/account-parent/main</connection>
+        <developerConnection>scm:git:https://github.com/WangTf-create/account-parent/main</developerConnection>
+        <url>https://github.com/WangTf-create/account-parent.git</url>
+    </scm>
     <properties>
         <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -258,6 +264,15 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
+                    <configuration>
+                        <tagBase>HEAD</tagBase>
+                    </configuration>
                 </plugin>
 
             </plugins>
