@@ -46,7 +46,6 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.release>${java.version}</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--归类依赖-->
         <springframework.version>2.7.4</springframework.version>
         <junit.version>4.13.2</junit.version>
