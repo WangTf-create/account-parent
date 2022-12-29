@@ -36,8 +36,8 @@
 
     <!--software configuration management-->
     <scm>
-        <connection>scm:git:https://github.com/WangTf-create/account-parent/main</connection>
-        <developerConnection>scm:git:https://github.com/WangTf-create/account-parent/main</developerConnection>
+        <connection>scm:git:https://github.com/WangTf-create/account-parent.git</connection>
+        <developerConnection>scm:git:https://github.com/WangTf-create/account-parent.git</developerConnection>
         <url>https://github.com/WangTf-create/account-parent.git</url>
     </scm>
     <properties>

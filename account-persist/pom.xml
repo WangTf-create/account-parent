@@ -15,7 +15,7 @@
     <name>Account Persistence</name>
 
 
-    <!---->
+    
     <dependencyManagement>
         <dependencies>
             <dependency>
