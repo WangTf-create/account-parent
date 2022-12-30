@@ -271,7 +271,12 @@
                     <artifactId>maven-release-plugin</artifactId>
                     <version>2.5.3</version>
                     <configuration>
-                        <tagBase>HEAD</tagBase>
+                        <tagNameFormat>v${project.version}</tagNameFormat>
+                        <tagBase>${project.artifactId}-${project.version}</tagBase>
+                        <!--升级子模块-->
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <!--是否生成release-pom.xml-->
+                        <generateReleasePoms>false</generateReleasePoms>
                     </configuration>
                 </plugin>
 
