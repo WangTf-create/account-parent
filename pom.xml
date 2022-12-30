@@ -277,6 +277,9 @@
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <!--是否生成release-pom.xml-->
                         <generateReleasePoms>false</generateReleasePoms>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
                     </configuration>
                 </plugin>
 
