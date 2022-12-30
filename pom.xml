@@ -19,7 +19,7 @@
     -->
     <groupId>com.citi.mvnbook.account</groupId>
     <artifactId>account-parent</artifactId>
-    <version>1.2.4</version>
+    <version>1.2.4-SNAPSHOT</version>
     <modules>
         <module>account-persist</module>
         <module>account-email</module>
@@ -319,12 +319,12 @@
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <!--是否生成release-pom.xml-->
                         <generateReleasePoms>false</generateReleasePoms>
-                        <goals>
-                            deploy
-                        </goals>
+                        <goals>deploy</goals>
+                        <mavenExecutorId>forked-path</mavenExecutorId>
                     </configuration>
                 </plugin>
 
+                <!--修改检测注释的错误-->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
